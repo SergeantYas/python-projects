@@ -55,6 +55,7 @@ if gamemode == 1:
             else:
                 play = False
         elif op == 4:
+            divide_is_int = False
             while divide_is_int == False:
                 first_subject_difference = random.randint(1, difficulty)
                 second_subject_difference = random.randint(1, difficulty)
@@ -137,6 +138,7 @@ elif gamemode == 2:
                 if time_taken >= 60:
                     play = False
         elif op == 4:
+            divide_is_int = False
             while divide_is_int == False:
                 first_subject_difference = random.randint(1, difficulty)
                 second_subject_difference = random.randint(1, difficulty)
