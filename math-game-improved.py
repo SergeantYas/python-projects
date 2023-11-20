@@ -17,6 +17,7 @@ score = 0
 incorrect_answers = 0
 timeout = 60
 
+
 # Functions
 # Returns randomly generated operand
 def generate_operand(difficulty):
@@ -28,8 +29,8 @@ def generate_operands(difficulty):
 
 # Returns tuple of validated operands depending on the operator provided
 def generate_math_test(operator):
-    # If operator is multiplication or division, cut difficulty in half if the difficulty is also over 3
-    operands = generate_operands(difficulty if operator not in ('x', '/') and difficulty > 3 else int(difficulty/2))
+    # If operator is multiplication or division, cut difficulty in half
+    operands = generate_operands(difficulty if operator not in ('x', '/') else int(difficulty/2))
     
     # If operator is subtraction, sort operands in descending order to avoid negative answer
     if operator == '-':
