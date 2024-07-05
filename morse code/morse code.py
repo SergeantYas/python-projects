@@ -108,7 +108,6 @@ def translate(s):
                 i = "".join(i.split(" ")[-1])
                 print(" ", end="")
             print(morse(i, in_alpha), end="")
-    u = input()
     
 def silent_translate(s):
     in_alpha = False
@@ -208,3 +207,4 @@ if inp in ["t", "T"]:
     else:
         silent_translate(input("Message: "))
 else: learn()
+u = input()
