@@ -89,8 +89,10 @@ def audio(m):
 from playsound import playsound
 import time, random
 invalid = "......"
+diff = 0
 
 def translate(s):
+    global diff
     in_alpha = False
     for i in s:
         if i.isalpha() or i in [0,1,2,3,4,5,6,7,8,9]:
@@ -100,7 +102,8 @@ def translate(s):
             i = i.lower()
             if i != " ": print(morse(i, in_alpha), end=" "); audio(morse(i, in_alpha))
             else: print(" /  ", end=""); time.sleep(1)
-            time.sleep(1)
+            if diff != 1:
+                time.sleep(1)
     else:
         s = s.split(" ")
         for i in s:
@@ -129,12 +132,13 @@ def silent_translate(s):
     u = input()
         
 def learn():
+    global diff
     diff = ""
     while diff not in [1,2,3,4,5]:
         diff = int(input("Difficulty (easy = 1) (1-5): "))
         
     if diff == 1:
-        while True: # audio + text 1 word
+        while True: # audio + text 1 letter
             letter = chr(random.randint(0,25) + ord("a"))
             translate(letter)
             if input(": ") == letter: print("Correct")
