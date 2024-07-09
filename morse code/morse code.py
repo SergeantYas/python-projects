@@ -182,20 +182,20 @@ def learn():
             if input(": ") == phrase: print("Correct")
             else: print("Incorrect:", phrase)
             time.sleep(5)
-    elif diff == 5: # audio 1 sentance 
+    elif diff == 5: # audio 1 sentence 
         with open("common 1000 words.txt", "r") as f:
             word_list = f.read().split("\n")
-        sentance = []
+        sentence = []
         for i in range(random.randint(5,13)):
             word = random.choice(word_list)
-            if word not in sentance: sentance.append(word)
-        sentance = " ".join(sentance)
+            if word not in sentence: sentence.append(word)
+        sentence = " ".join(sentence)
         while True:
-            for i in sentance:
+            for i in sentence:
                 audio(morse(i, True))
                 time.sleep(1)
-            if input(": ") == sentance: print("Correct")
-            else: print("Incorrect:", sentance)
+            if input(": ") == sentence: print("Correct")
+            else: print("Incorrect:", sentence)
             time.sleep(5)
 
 inp = ""
